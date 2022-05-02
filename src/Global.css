@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+  @apply 
+  bg-[#8257e6]
+  p-2 
+  h-10 
+  rounded
+  text-violet-100
+  hover:bg-violet-700
+  transition-colors
+}
