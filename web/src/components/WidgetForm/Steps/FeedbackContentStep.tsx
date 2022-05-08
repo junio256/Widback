@@ -1,7 +1,9 @@
 import { ArrowLeft, Camera } from "phosphor-react";
 import { FormEvent, useState } from "react";
 import { FeedbackType, feedbackTypes } from ".."
+import { api } from "../../../lib/api";
 import { CloseButton } from "../../CloseButton"
+import { Loading } from "../loading";
 import { ScreenshotButton } from "./ScreenshotButton";
 
 interface FeedbackContentStepProps {
@@ -17,16 +19,34 @@ export function FeedbackContentStep({
 }: FeedbackContentStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
   const [comment, setComment] = useState('')
+  const [isSendingFeedback, setIsSendingFeedback] = useState(false);
+  //[13] Vamos criar um estado usando useState(tenho que estudar mais sobre isso)
+  //? Evite criar um estado muito genérico, tipo 'loading', pois fica difícil de identificar o que o estado está apontando.
+
+
   const feedbackTypeInfo = feedbackTypes[feedbackType]
 
-  function handleSubmitFeedback(event: FormEvent) {
-    event.preventDefault();
-    console.log({
-      screenshot,
-      comment
-    })
+  async function handleSubmitFeedback(event: FormEvent) { //[1] função que ao clicar em enviar, irá realizar o que está dentro
+    event.preventDefault(); //[2] Para evitar que ao clicar em submit seja enviado para outra página, é colocado esta função no parâmetro event.
+    //// console.log({
+    ////   screenshot,
+    ////   comment
+    //// }) 
+    //[3] Não será mais utilizado pois agora iremos começar a fazer um upload direto para o backend que criamos.
+    setIsSendingFeedback(true); // * Ao iniciar agora o submit, o navegador passará a exibir uma animação de loading.
+    // [14] Agora o que temos que fazer é passar isso como uma função para o botão de [enviar](15). 
 
-    onFeedbackSent();
+    await api.post('/feedbacks', { //[4] Irá enviar os dados que estão abaixo
+      type: feedbackType, //[5] A tipagem no type (que nesse caso seria BUG, IDEA e OTHERS) ela é definida pelo parâmetro feedbackType
+      comment, //[6] comment também já foi definido pelo conteúdo da textArea
+      screenshot, //[7]  também já definida pela função importada ScreenshotButton
+    }) //[8] Como este é um processo mais demorado, é aplicado async await para fazer com que não trave o sistema.
+
+    setIsSendingFeedback(false); // * Apesar de não ser necessário indicar que é necessário parar o de carregar, decidi colocar aqui. 
+    //[9] Para ver se está tudo certinho, iremos abrir nossa aplicação e fazer um teste e enviar 
+    onFeedbackSent();// TODO: Por enquanto não lembro do porque foi colocado isso kkkk
+    //[11] E agora testado, vemos que por enquanto não há nenhuma tela de loading quando clicamos em ~enviar~
+    //[12] e é isso que vou fazer [agora](13). 
 
   }
 
@@ -63,11 +83,13 @@ export function FeedbackContentStep({
             onScreenshotTook={setScreenshot}
           />
           <button
-            disabled={comment.length === 0}
+            disabled={comment.length === 0 || isSendingFeedback} // [17] Agora o botão irá ficar opaco enquanto estiver carregando.  Porém notamos que não está sendo enviado a screenshot no nosso feedback, e para mudarmos isso teremos que ir para a pasta use-cases e no arquivo submit-feedback-use-case.ts no nosso backend ( pasta server )
             type="submit"
             className="p-2 bg-brand-500 rounded-md border-transparent flex-1 flex justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors disabled:opacity-50 disabled:hover:bg-brand-500"
           >
-            Send Feedback
+            {/* [15] Agora iremos passar a função de carregamento ao clicar neste botão abaixo. */}
+            {isSendingFeedback ? <Loading /> : `Send Feedback`}
+            {/* [16] Agora sim, mostra que está carregando, mas seria bom desativar o botão enquanto envia para evitar que o usuário clique duas vezes e dê bug, então iremos passar isso para o [botão](17) */}
           </button>
         </footer>
       </form>
