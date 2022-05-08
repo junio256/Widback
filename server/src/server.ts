@@ -17,6 +17,6 @@ app.use(routes)
 
 
 const PORT = 3000
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`HTTP server running at PORT: ${PORT}`);
 })
