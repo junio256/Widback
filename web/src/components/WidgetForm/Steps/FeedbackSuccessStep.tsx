@@ -1,5 +1,5 @@
 import { CloseButton } from "../../CloseButton";
-
+import imageSuccess from "../../../assets/success.svg"
 interface FeedbackSuccessStepProps {
   onFeedbackRestartRequested: () => void;
 }
@@ -15,7 +15,7 @@ export function FeedbackSuccessStep({
       </header>
 
       <div className="flex flex-col items-center py-10 w-[304px]">
-        <img src="./src/assets/success.svg" alt="An green square indicating that everything was done correctly" />
+        <img src={imageSuccess} alt="An green square indicating that everything was done correctly" />
         <span className="text-xl text-center mt-2">We are thankful for your feedback!</span>
         <button
           type="button"

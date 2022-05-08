@@ -1,7 +1,4 @@
 import { FeedbackType, feedbackTypes } from '..'
-import bugIMageUrl from '../../assets/bug.svg'
-import ideaIMageUrl from '../../assets/idea.svg'
-import thoughtIMageUrl from '../../assets/thought.svg'
 import { CloseButton } from '../../CloseButton';
 
 interface FeedbackTypeStepProps {
