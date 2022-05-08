@@ -74,7 +74,7 @@ export function FeedbackContentStep({
       <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
         <textarea
           className="min-w-[304px] w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-1  border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-offset-2  focus:outline-none focus:ring-offset-zinc-900 focus:ring-brand-500 px-4 py-2 resize-none  scrollbar-thumb-zinc-900 focus:ring-2 scrollbar-track-transparent scrollbar-thin "
-          placeholder="Tell us with detail what is happening?"
+          placeholder={feedbackTypeInfo.image.placeholder}
           onChange={event => setComment(event.target.value)}
         />
         <footer className="flex gap-2 mt-2">
