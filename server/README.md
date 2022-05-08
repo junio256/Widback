@@ -31,3 +31,5 @@ Agora basta digitar `npm run dev` e deve estar tudo certinho.
 3. mas antes de simplesmente inserirmos uma nova linha e colocarmos `${screenshot}`, é necessário realizar uma condicional pois lembre-se: **o screenshot é opcional!**. 
 4. logo, inserimos o seguinte: ` screenshot ? `${screenshot}` : ``, `, traduzindo: se possuir screenshot, insira ela aqui, caso contrário, coloque um espaço em branco.
 5. Prontinho, agora é só realizar o deploy para o nosso servidor. 
+
+Add something on Readme to check if doing a new push will resolve the website haha
