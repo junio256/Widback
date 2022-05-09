@@ -9,27 +9,27 @@ import { FeedbackSuccessStep } from "./Steps/FeedbackSuccessStep";
 
 export const feedbackTypes = {
   BUG: {
-    title: "Bug",
+    title: "Problema",
     image: {
       source: bugIMageUrl,
-      alt: 'A inset image',
-      placeholder: "Something isn't working as it should? We want to fix it. Tell us with details what is happening..."
+      alt: 'Ícone de um inseto',
+      placeholder: "Algo não está funcionando bem? Queremos corrigir. Conte com detalhes o que está acontecendo..."
     }
   },
   IDEA: {
-    title: "Idea",
+    title: "Ideia",
     image: {
       source: ideaIMageUrl,
-      alt: 'A lamp image',
-      placeholder: "Got an idea for improvement or a new feature? Tell us!"
+      alt: 'Ícone de uma lâmpada',
+      placeholder: "Teve uma ideia de melhoria ou de nova funcionalidade? Conta pra gente!"
     }
   },
   OTHER: {
-    title: "Other",
+    title: "Outros",
     image: {
       source: thoughtIMageUrl,
-      alt: 'images of some clouds',
-      placeholder: "We want to hear from you. What would you like to tell us?"
+      alt: 'Ícone de uma nuvem',
+      placeholder: "Queremos te ouvir. O que você gostaria de nos dizer? "
     }
   },
 }
@@ -74,7 +74,7 @@ export function WidgetForm() {
         </>
       )}
       <footer className="text-xs text-neutral-400">
-        Feito com 💕 por <a className="underline underline-offset-2" target="_blank" href="https://github.com/juniokoi">Junio KOI</a>
+        Feito com ♥ pela <a className="underline underline-offset-2" target="_blank" href="https://github.com/juniokoi">KOI Company</a> ©
       </footer>
     </div>
   )
