@@ -5,7 +5,6 @@ import { InputScreen } from './components/InputScreen'
 import { Advantages } from './components/Advantages'
 import { Footer } from './components/Footer'
 
-
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
 } else {
@@ -23,6 +22,7 @@ function App() {
       <InputScreen />
       <Advantages />
       <Footer />
+      
     </div>
   )
 

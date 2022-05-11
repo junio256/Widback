@@ -38,9 +38,8 @@ export function CallButton() {
 
 
         <img className='w-[42rem] absolute top-36 z-10 ' src={roundCircle} alt="" />
-
-
       </div>
     </>
   )
+
 }
