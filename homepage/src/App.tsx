@@ -4,7 +4,8 @@ import { WidgetScreen } from './components/WidgetScreen'
 import { InputScreen } from './components/InputScreen'
 import { Advantages } from './components/Advantages'
 import { Footer } from './components/Footer'
-import Fefeedget from '@juniokoi/feedget/src/main'
+import { Feedget } from '@juniokoi/feedget'
+
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
@@ -12,11 +13,11 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
   document.documentElement.classList.remove('dark')
 }
 
+console.log(Feedget());
 
 function App() {
   return (
     <div className='bg-zinc-50 dark:bg-BGdark-900'>
-      <Fefeedget />
       <Header />
       <CallButton />
       <WidgetScreen />
