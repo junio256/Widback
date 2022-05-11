@@ -88,7 +88,7 @@ export function FeedbackContentStep({
             className="p-2 bg-brand-500 rounded-md border-transparent flex-1 flex justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors disabled:opacity-50 disabled:hover:bg-brand-500"
           >
             {/* [15] Agora iremos passar a função de carregamento ao clicar neste botão abaixo. */}
-            {isSendingFeedback ? <Loading /> : `Send Feedback`}
+            {isSendingFeedback ? <Loading /> : `Enviar Feedback`}
             {/* [16] Agora sim, mostra que está carregando, mas seria bom desativar o botão enquanto envia para evitar que o usuário clique duas vezes e dê bug, então iremos passar isso para o [botão](17) */}
           </button>
         </footer>
