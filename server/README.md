@@ -1,3 +1,14 @@
+### Caso tenha dado erro no tsconfig.json ao clonar  o projeto:
+
+Como foi colocado um arquivo .svg como ícone do aplicativo, é necessário fazer com que o TypeScript entenda esse novo formato, para isso você deve ir até a pasta [@types](./node_modules/%40types/) e criar um arquivo chamado `custom.d.ts` e  adicionar o seguinte texto: 
+```typescript
+declare module '*.svg';
+```
+
+E como pode ver, no arquivo [tsconfig.json](./tsconfig.json) no final tem uma linha escrita `"files": [ "./node-modules/@types/custom.d.ts" ]` que mostra que está importando as configurações do arquivo criado acima para que seja carregado normalmente o arquivo svg.
+
+
+
 # SOLID
 
 1. Single Responsibility Principle
@@ -32,4 +43,3 @@ Agora basta digitar `npm run dev` e deve estar tudo certinho.
 4. logo, inserimos o seguinte: ` screenshot ? `${screenshot}` : ``, `, traduzindo: se possuir screenshot, insira ela aqui, caso contrário, coloque um espaço em branco.
 5. Prontinho, agora é só realizar o deploy para o nosso servidor. 
 
-Add something on Readme to check if doing a new push will resolve the website haha

@@ -1,6 +1,9 @@
 import { MailAdapter } from "../adapters/mail-adapter";
 import { FeedbacksRepository } from "../repositories/feedbacks-repository";
 
+import feedgetLogo from "./asset/feedgetLogo.svg";
+
+
 interface SubmitFeedbackUseCaseRequest {
   type: string;
   comment: string;
@@ -43,17 +46,32 @@ export class SubmitFeedbackUseCase {
         font-size: 1rem;
         max-width: 40vw;
         background-color: #EFF2F8 ; 
-        padding-30px;
+        padding: 30px;
         color:#161320; 
         border-radius: 16px; 
         -moz-box-shadow: -1px 1px 21px -2px rgba(0, 0, 0, 0.5);  
         -webkit-box-shadow: -1px 1px 21px -2px rgba(0, 0, 0, 0.5); 
-        box-shadow: -1px 1px 21px -2px rgba(0, 0, 0, 0.5)
+        box-shadow: -1px 1px 21px -2px rgba(0, 0, 0, 0.5);
+        display:flex;
+        flex-direction:column;
+        align-items: flex-start;
+        margin: 0 auto
         ">`,
-
-
+        `<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 40vw; ">`,
+        `<div>`,
         `<h2>Um novo Feedback foi emitido!</h2>`,
-
+        `</div>`,
+        `<div
+        style="display: flex; flex-direction: row;justify-content: center; align-items: center; font-size: 1.75rem; margin-right: 2rem;">`,
+        `<img
+        style="
+        background-color:#996DFF; 
+        border-radius: 8px; 
+        padding: 4px; 
+        margin: 4px;"
+        src="${feedgetLogo}" alt="Logo">`,
+        `</div>`,
+        `</div>`,
 
         `<hr style="
         width: 1rem; 
