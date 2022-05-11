@@ -4,6 +4,7 @@ import { FeedbacksRepository } from "../repositories/feedbacks-repository";
 import feedgetLogo from "./asset/feedgetLogo.svg";
 
 
+
 interface SubmitFeedbackUseCaseRequest {
   type: string;
   comment: string;
@@ -70,13 +71,16 @@ export class SubmitFeedbackUseCase {
         padding: 4px; 
         margin: 4px;"
         src="${feedgetLogo}" alt="Logo">`,
+        `<strong>Feedget</strong>`,
         `</div>`,
         `</div>`,
 
-        `<hr style="
-        width: 1rem; 
+        `    <hr style="
+        width: 30rem ;
         border: 0; 
-        height: 2px; 
+        height: 2px;
+        position: absolute;
+        margin-top: 4rem;
         border-radius: 4px; 
         background-color: #996DFF;
         ">`,
