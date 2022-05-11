@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.1",
+    "@teambit/bvm": "^0.0.37",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
