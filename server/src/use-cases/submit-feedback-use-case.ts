@@ -1,10 +1,6 @@
 import { MailAdapter } from "../adapters/mail-adapter";
 import { FeedbacksRepository } from "../repositories/feedbacks-repository";
 
-import feedgetLogo from "./asset/*.svg";
-
-
-
 interface SubmitFeedbackUseCaseRequest {
   type: string;
   comment: string;
@@ -63,14 +59,7 @@ export class SubmitFeedbackUseCase {
         `<h2>Um novo Feedback foi emitido!</h2>`,
         `</div>`,
         `<div
-        style="display: flex; flex-direction: row;justify-content: center; align-items: center; font-size: 1.75rem; margin-right: 2rem;">`,
-        `<img
-        style="
-        background-color:#996DFF; 
-        border-radius: 8px; 
-        padding: 4px; 
-        margin: 4px;"
-        src="${feedgetLogo}" alt="Logo">`,
+        style="display: flex; flex-direction: row;justify-content: center; align-items: center; font-size: 1.75rem; margin-right: 2rem;">`, `<strong>Feedget</strong>`,
         `<strong>Feedget</strong>`,
         `</div>`,
         `</div>`,
