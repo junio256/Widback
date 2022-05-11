@@ -9,8 +9,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.1",
-    "@juniokoi/feedget": "^0.0.2",
-    "@teambit/bvm": "^0.0.37",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
