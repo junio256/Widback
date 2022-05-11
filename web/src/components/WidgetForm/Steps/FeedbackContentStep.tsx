@@ -55,13 +55,13 @@ export function FeedbackContentStep({
       <header>
         <button
           type="button"
-          className="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100"
+          className="top-5 left-5 absolute text-lightText-900 dark:text-darkText-400 hover:text-lightText-600 dark:hover:text-darkText-100"
           onClick={onFeedbackRestartRequested}
         >
 
           <ArrowLeft weight="bold" className="w-4 h-4" />
         </button>
-        <span className="text-xl leading-6 flex items-center gap-2">
+        <span className="text-xl leading-6 flex items-center gap-2  text-lightText-900 dark:text-darkText-100">
           <img
             src={feedbackTypeInfo.image.source}
             alt={feedbackTypeInfo.image.alt}
@@ -73,7 +73,7 @@ export function FeedbackContentStep({
       </header>
       <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
         <textarea
-          className="min-w-[304px] w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-1  border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-offset-2  focus:outline-none focus:ring-offset-zinc-900 focus:ring-brand-500 px-4 py-2 resize-none  scrollbar-thumb-zinc-900 focus:ring-2 scrollbar-track-transparent scrollbar-thin "
+          className="min-w-[304px] w-full min-h-[112px] text-sm placeholder:text-lightText-600 dark:placeholder-darkText-400 text-lightText-900 dark:text-darkText-100 border-1  border-darkSurface-700 bg-transparent rounded-md focus:border-brand-500 focus:ring-offset-2  focus:outline-none dark:focus:ring-offset-darkSurface-900 focus:ring-brand-500 px-4 py-2 resize-none  dark:scrollbar-thumb-darkSurface-900 focus:ring-2 scrollbar-track-transparent scrollbar-thin "
           placeholder={feedbackTypeInfo.image.placeholder}
           onChange={event => setComment(event.target.value)}
         />

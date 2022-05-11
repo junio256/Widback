@@ -13,8 +13,8 @@ export function Advantages() {
           Tudo o que você precisa, e <strong>muito</strong> mais.
         </h1>
       </div>
-      <div className="dark:bg-BGdark-500 w-full pt-10 pb-32">
-        <div id="advantagesDiv" className="mt-4 container max-w-[70rem]  rounded-xl flex flex-row justify-center flex-wrap w-full">
+      <div className="dark:bg-BGdark-500 w-full pt-10 sm:px-4 pb-32">
+        <div id="advantagesDiv" className="mt-4 container  max-w-[70rem]  rounded-xl flex flex-row justify-center flex-wrap w-full">
 
           <button>
             <img src={Smartphone} alt="" />

@@ -7,5 +7,5 @@
 }
 
 body {
-  @apply bg-[#161320] text-zinc-100;
+  @apply bg-darkSurface-700 text-zinc-100;
 }

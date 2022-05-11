@@ -1,9 +1,7 @@
 {
   "name": "@juniokoi/feedget",
-
   "private": false,
-  "version": "0.0.2",
-
+  "version": "0.0.3",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -30,7 +28,7 @@
     "vite": "^2.9.5"
   },
   "description": "A feedback widget project to implement on various websites and mobile apps to get feedback in a very easy way.",
-  "main": "server.js",
+  "main": "./src/Feedget.tsx",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Juniokoi/Feedget.git"

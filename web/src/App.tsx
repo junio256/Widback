@@ -1,5 +1,12 @@
-import { Widget } from "./components/WidgetButton";
+import { WidgetButton } from "./components/WidgetButton";
 
-export function App(){
-  return <Widget />
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+
+
+export function App() {
+  return <WidgetButton />
 }
