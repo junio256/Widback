@@ -1,7 +1,7 @@
 import { MailAdapter } from "../adapters/mail-adapter";
 import { FeedbacksRepository } from "../repositories/feedbacks-repository";
 
-import feedgetLogo from "./asset/feedgetLogo.svg";
+import feedgetLogo from "./asset/*.svg";
 
 
 
