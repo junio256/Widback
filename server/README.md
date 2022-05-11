@@ -43,3 +43,4 @@ Agora basta digitar `npm run dev` e deve estar tudo certinho.
 4. logo, inserimos o seguinte: ` screenshot ? `${screenshot}` : ``, `, traduzindo: se possuir screenshot, insira ela aqui, caso contrário, coloque um espaço em branco.
 5. Prontinho, agora é só realizar o deploy para o nosso servidor. 
 
+force update
