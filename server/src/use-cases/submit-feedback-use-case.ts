@@ -35,7 +35,7 @@ export class SubmitFeedbackUseCase {
     })
 
     await this.mailAdapter.sendMail({
-      subject: 'Novo feedback',
+      subject: `Novo feedback! Do tipo ${type}`,
       body: [
         `<div 
         style="
@@ -59,7 +59,7 @@ export class SubmitFeedbackUseCase {
         `<h2>Um novo Feedback foi emitido!</h2>`,
         `</div>`,
         `<div
-        style="display: flex; flex-direction: row;justify-content: center; align-items: center; font-size: 1.75rem; margin-right: 2rem;">`, `<strong>Feedget</strong>`,
+        style="display: flex; flex-direction: row;justify-content: center; align-items: center; font-size: 1.75rem; margin-right: 2rem;">`,
         `<strong>Feedget</strong>`,
         `</div>`,
         `</div>`,
@@ -86,6 +86,7 @@ export class SubmitFeedbackUseCase {
           <img style="max-width: 600px;" src="${screenshot}" />`
           :
           `Usuário não tirou nenhuma foto`,
+        `<p style="margin-top: 2rem ; font-size: 0.8rem; color: darkgrey; text-align: start;"> Este email é enviado de forma automática, para alterar as configurações é necessário alterar os dados no próprio servidor. <br>Não denuncie este email como span, caso contrário poderá gerar atritos com o provedor de email.<br>Qualquer dúvida entrar em contato com nosso suporte: <u>support@feedget.com</u> </p>`,
         `</div>`
       ].join('\n')
     })
