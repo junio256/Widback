@@ -1,7 +1,7 @@
 {
   "name": "@juniokoi/feedget",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -14,18 +14,18 @@
     "axios": "^0.27.2",
     "html2canvas": "^1.4.1",
     "phosphor-react": "^1.4.1",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.13",
+    "tailwind-scrollbar": "^1.3.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.13",
-    "tailwind-scrollbar": "^1.3.1",
-    "tailwindcss": "^3.0.24",
-    "typescript": "^4.6.3",
     "vite": "^2.9.5"
   },
   "description": "A feedback widget project to implement on various websites and mobile apps to get feedback in a very easy way.",
