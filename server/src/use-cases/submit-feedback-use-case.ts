@@ -41,7 +41,9 @@ export class SubmitFeedbackUseCase {
         style="
         font-family: Helvetica, Arial, sans-serif; 
         font-size: 1rem;
+        max-width: 40vw;
         background-color: #EFF2F8 ; 
+        padding-30px;
         color:#161320; 
         border-radius: 16px; 
         -moz-box-shadow: -1px 1px 21px -2px rgba(0, 0, 0, 0.5);  
@@ -67,8 +69,8 @@ export class SubmitFeedbackUseCase {
 
         screenshot
           ?
-          `<a target="_blank" href="${screenshot}">
-          Abra a foto em <em>alta resolução</em> em uma nova guia.
+          `<a style="text-decoration: none; color:#996DFF; font-weight: bolder;" target="_blank" href="${screenshot}">
+          Abra a foto em <em>alta resolução</em> em uma nova guia »
           </a> <br> 
           <img style="max-width: 600px;" src="${screenshot}" />`
           :
