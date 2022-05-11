@@ -94,6 +94,6 @@
     "src/**/*"
   ],
   "files": [
-    "./node_modules/@types/custom.d.ts"
+    "custom.d.ts"
   ],
 }
