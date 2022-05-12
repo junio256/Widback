@@ -19,7 +19,7 @@
     "test": "jest",
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
-    "start": "npx directus start"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
