@@ -16,6 +16,8 @@ Este projeto foi desenvolvido com o intuito de facilitar a coleta de feedbacks d
 Decidi criar **duas páginas** separadas, uma contendo uma landing page do projeto ( e se der certo, irei implementar o widget dentro dele) e outra apenas com o widget, para facilitar dar zoom e ver melhor todo o layout. 
 * [Landing Page](https://feedget-landingpage.vercel.app/)
 * [Apenas o Widget](https://feedget-widget-juniokoi.vercel.app/)
+<img src="https://user-images.githubusercontent.com/53125029/167956950-b3667fb5-9a0f-463f-914e-f93b26b546b1.png" width=50% height=50%>
+<img src="" width=50% height=50%>
 
 ## Features 🎉
 
