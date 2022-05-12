@@ -54,3 +54,13 @@ input {
   -webkit-box-shadow: -1px 1px 21px -2px rgba(130, 87, 230, 0.49), -1px 1px 21px -2px rgba(130, 87, 230, 0.49) inset;
   -moz-box-shadow: -1px 1px 21px -2px rgba(130, 87, 230, 0.49), -1px 1px 21px -2px rgba(130, 87, 230, 0.49) inset;
 }
+
+@media (max-width: 789px) {
+  #menuScreen {
+    flex-direction: column;
+    width: auto;
+    margin: 2rem;
+    gap: 10rem;
+  }
+
+}

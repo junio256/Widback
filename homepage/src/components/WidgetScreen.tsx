@@ -6,9 +6,9 @@ export function WidgetScreen() {
     <>
       {/* <img className='absolute w-[80vw]  -z-20' src={GradientTop} alt="" /> */}
 
-      <div className='flex  sm:flex-col w-auto justify-center items-center gap-80 sm:gap-0 font-source container mx-auto py-20'>
+      <div id='menuScreen' className='flex lg:flex-row lg:gap-80  sm:flex-col w-auto justify-center items-center sm:gap-0 font-source container mx-auto py-20'>
 
-        <main className=' rounded-xl border-2 shadow-inner sm:text-center shadow-brand-500 border-brand-300 max-w-[30rem] p-8'>
+        <main className=' rounded-xl border-2 shadow-inner sm:text-center shadow-brand-500 border-brand-300 min-w-[30rem] max-w-[30rem] p-8'>
 
           <h1 className='text-4xl font-inter dark:text-TextLight-100 mt-5 leading-[4rem]'>O que era complicado, nunca foi <strong>tão</strong> simples.</h1>
 
@@ -24,7 +24,7 @@ export function WidgetScreen() {
 
         </main>
 
-        <aside className='text-TextLight-100 rounded-lg sm:pt-20 scale-125'>
+        <aside className='text-TextLight-100 rounded-lg sm:pt-20 scale-125 min-w-fit'>
 
           <img src={InitialScreenshot} alt="" />
 
