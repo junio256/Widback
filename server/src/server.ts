@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(routes)
 
 
-const PORT = 3000
+const PORT = 3333
 app.listen(process.env.PORT || PORT, () => {
-  console.log(`HTTP server running at PORT: ${PORT}`);
+  console.log(`HTTP server running at PORT: ${process.env.PORT || PORT}`);
 })

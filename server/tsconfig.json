@@ -92,5 +92,5 @@
   },
   "include": [
     "src/**/*"
-  ]
+, "directus.config.js"  ]
 }
