@@ -4,13 +4,9 @@ import { WidgetScreen } from './components/WidgetScreen'
 import { InputScreen } from './components/InputScreen'
 import { Advantages } from './components/Advantages'
 import { Footer } from './components/Footer'
+import { ThemeSwitcher } from './components/ThemeSwitcher'
 
 
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  document.documentElement.classList.add('dark')
-} else {
-  document.documentElement.classList.remove('dark')
-}
 
 function App() {
   return (
