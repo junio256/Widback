@@ -1,15 +1,17 @@
 import { FeedbackType, feedbackTypes } from '..'
 import { CloseButton } from '../../CloseButton';
+import { ThemeSwitcher } from '../../ThemeSwitcher';
 
 interface FeedbackTypeStepProps {
   onFeedbackTypeChanged: (type: FeedbackType) => void;
 }
-
+/*  */
 
 export function FeedbackTypeStep({ onFeedbackTypeChanged }: FeedbackTypeStepProps) {
   return (
     <>
       <header>
+        <ThemeSwitcher />
         <span className="text-xl text-lightText-900  dark:text-darkText-100 leading-6">
           Deixe seu feedback
         </span>
