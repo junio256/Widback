@@ -2,6 +2,7 @@ import feedgetLogo from './../assets/BrandLogos/feedgetLogo.svg'
 import figma from './../assets/BrandLogos/figma.svg'
 import github from './../assets/BrandLogos/github.svg'
 import linkedin from './../assets/BrandLogos/linkedin.svg'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 
 export function Header() {
@@ -23,8 +24,7 @@ export function Header() {
             <a href="#" className="mr-16">Suporte</a>
             <a href="#" className="mr-20">Preços</a>
           </div>
-
-
+          <ThemeSwitcher />
           <div className="flex items-center shadow-md bg-brand-500 rounded-lg sm:invisible lg:visible">
             <a target="_blank" href="https://github.com/Juniokoi/Feedget" ><img src={github} alt="" /></a>
             <a target="_blank" href="https://www.linkedin.com/in/junio-koi/" ><img src={linkedin} alt="" /></a>
