@@ -13,7 +13,6 @@ function App() {
     <div className='bg-zinc-50 dark:bg-BGdark-900'>
       <Header />
       <CallButton />
-      <ThemeSwitcher />
       <WidgetScreen />
       <InputScreen />
       <Advantages />
