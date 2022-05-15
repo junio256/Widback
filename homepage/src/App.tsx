@@ -13,11 +13,11 @@ export default function App() {
     <div className='bg-zinc-50 dark:bg-BGdark-900'>
       <Header />
       <CallButton />
+      <Feedget />
       <WidgetScreen />
       <InputScreen />
       <Advantages />
       <Footer />
-      <Feedget />
     </div>
   )
 

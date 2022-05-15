@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
-import { Moon, MoonStars, Sun } from 'phosphor-react'
+import { Moon, Sun } from 'phosphor-react'
 
 const Theme = document.documentElement.classList.contains('dark')
 let InitialColorScheme: string
@@ -11,7 +11,6 @@ Theme ? InitialColorScheme = 'dark' : InitialColorScheme = 'light'
 export function ThemeSwitcher() {
   const [enabled, setEnabled] = useState<true | false>(Theme)
   const [theme, setTheme] = useState(InitialColorScheme)
-  console.log(enabled);
 
 
   const ChangeTheme = () => {
