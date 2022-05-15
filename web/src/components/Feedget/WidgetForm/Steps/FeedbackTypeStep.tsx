@@ -1,6 +1,6 @@
 import { FeedbackType, feedbackTypes } from '..'
-import { CloseButton } from '../../CloseButton';
-import { ThemeSwitcher } from '../../ThemeSwitcher';
+import { CloseButton } from './../../CloseButton';
+import { ThemeSwitcher } from './../../ThemeSwitcher';
 
 interface FeedbackTypeStepProps {
   onFeedbackTypeChanged: (type: FeedbackType) => void;
