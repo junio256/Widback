@@ -4,8 +4,7 @@ import { useState } from "react";
 const MoonIcon = <Moon weight="fill" className="mx-2" />
 const SunIcon = <Sun weight="fill" className="mx-2" />
 
-const initialThemeScheme = document.documentElement.classList.contains('dark')
-
+const initialThemeScheme = (localStorage.theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches)
 
 export function ThemeOptions() {
   const [theme, setTheme] = useState('system') //Por padrão o tema é indefinido (ou seja, do sistema), tendo outras alternativas como dark e light

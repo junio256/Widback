@@ -1,3 +1,4 @@
+import { Feedget } from "./components/Feedget"
 
 
 if (localStorage.theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -6,6 +7,6 @@ if (localStorage.theme === 'dark' || window.matchMedia('(prefers-color-scheme: d
   document.documentElement.classList.remove('dark')
 }
 
-export default function App(){
-  <Feedget />
+export function App() {
+  return <Feedget />
 }
