@@ -21,7 +21,7 @@ Decidi criar **duas páginas** separadas, uma contendo uma landing page do proje
 
 ## Features 🎉
 
-### Paleta de cores reajustada! 
+### ∙ Paleta de cores reajustada! 
 Enquanto o design da [@ilanamallak](https://www.linkedin.com/in/ilana-mallak/) é magnifico, tem um tópico que venho pensando que seria o de [não usar preto em temas escuros](https://www.jacksonsart.com/blog/2013/08/08/use-of-black-killing-your-colours/), por mais estranho que isso pareça, tem uma lógica, isso porque ao usar uma 
 cor mais azulada em vez de cinza, da um destaque maior para as outras cores. <br>
 <div align="center">
@@ -30,11 +30,9 @@ cor mais azulada em vez de cinza, da um destaque maior para as outras cores. <br
 
 ### ∙ Modo claro e escuro!
 <div align="center">
-<img src="https://user-images.githubusercontent.com/53125029/167977121-df8f838b-6b85-4adf-bd0e-afde1ce85c86.png" width=38% height=38%>   <img src="https://user-images.githubusercontent.com/53125029/167977126-f51a1194-424f-40a0-ad1e-6b0f749827e4.png" width=40% height=40%>
+<img src="https://user-images.githubusercontent.com/53125029/168494603-8625a173-f438-43b8-9b57-80a4db17b4c0.gif" width=38% height=38%>
 </div>
-<br><br> Para habilitar a troca das cores, basta mudar a configuração de temas do seu sistema operacional, e então o widget irá mudar de cor automaticamente. 
-
-(! Obs: A landing page também possui esse modo!)
+<br><br> 
 
 ### ∙ Email personalizado 📫
 <div align="center">
@@ -43,7 +41,7 @@ cor mais azulada em vez de cinza, da um destaque maior para as outras cores. <br
 <br><br>
 A cada nova solicitação que o cliente enviar, o servidor irá receber um email notificando este envio, e foram adicionados estilos para tornar essa notificação mais fácil de ler e interpretar.
 
-### Placeholder personalizado
+### ∙ Placeholder personalizado
 Agora dependendo do menu que você está, o texto que aparece quando não há nenhum texto é diferente dependendo do contexto.<br><br>
 <div align="center">
 <img src="https://user-images.githubusercontent.com/53125029/167977904-2c7847a6-0b2b-40a2-bfa6-6c7b3a591ba9.gif" alt="animated" width=30% height=30%>
@@ -59,4 +57,9 @@ ou se utilizar yarn
 yarn add @juniokoi/feedget
 ```
 
-E então basta importa-lo para dentro de alguma de suas páginas
+E então basta importa-lo para dentro de alguma de suas páginas utilizando 
+```jsx
+import {Feedget } from '@juniokoi/feedget'
+```
+E o botão já estará lá
+
