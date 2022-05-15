@@ -272,10 +272,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@juniokoi/feedget@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@juniokoi/feedget/-/feedget-0.0.9.tgz#43257ef8dca19cef2af074902b19ca14c5644ad3"
-  integrity sha512-paiBWJ0PL+PxoXpqgT9j+9ELKPcazxBpQlrAWXEm5Sp66GSLjLVc3elFvbR/Fgw+kmdeOQZn30PqXmHvg7S8ow==
+"@juniokoi/feedget@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@juniokoi/feedget/-/feedget-0.0.10.tgz#3096c22b281f1b7ae492851e7eacabd115d633af"
+  integrity sha512-RANcnCIL2uerYJvyCYwa4gK0EdMZk9/9FTF0GxjDAOQftMo7eiSKDgd6TsYyvtCglXjykv+Qc91qx9XhQcIcHw==
   dependencies:
     "@headlessui/react" "^1.6.0"
     "@tailwindcss/forms" "^0.5.0"
