@@ -1,12 +1,15 @@
-import { Menu } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
 import { Desktop, Moon, Sun } from "phosphor-react";
 import { useState } from "react";
-const MoonIcon = <Moon weight="fill" />
-const SunIcon = <Sun weight="fill" />
+const MoonIcon = <Moon weight="fill" className="mx-2" />
+const SunIcon = <Sun weight="fill" className="mx-2" />
+
+const initialThemeScheme = document.documentElement.classList.contains('dark')
+
 
 export function ThemeOptions() {
-  let [theme, setTheme] = useState("") //Por padrão o tema é indefinido (ou seja, do sistema), tendo outras alternativas como dark e light
-
+  const [theme, setTheme] = useState('system') //Por padrão o tema é indefinido (ou seja, do sistema), tendo outras alternativas como dark e light
+  const [initialTheme, setInitialTheme] = useState(initialThemeScheme)
 
   function ChangeTheme(Theme: string) {
     if (Theme == 'light') {
@@ -19,44 +22,55 @@ export function ThemeOptions() {
       setTheme('dark')
     }
 
-    if (Theme === 'remove') {
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-        console.log(document.documentElement.classList);
-        setTheme('dark')
-        return null
-      } else {
-        document.documentElement.classList.remove('dark')
-        setTheme('light')
-        console.log(document.documentElement.classList);
-
-        return null
-      }
+    if (Theme === 'system') {
+      initialTheme ? ChangeTheme('dark') : ChangeTheme('light')
+      setTheme('system')
     }
   }
 
   return (
     <Menu>
       <Menu.Button
-        className={'dark:text-cyan-300 p-1'}>{theme.includes('light') ? SunIcon : MoonIcon}</Menu.Button>
-      <Menu.Items
-        className={'absolute left-24 flex flex-col mt-2 w-28 origin-right divide-y divide-gray-100 dark:divide-darkSurface-800  dark:text-darkText-100 rounded-md dark:shadow-md dark:shadow-brand-800 bg-white dark:bg-darkSurface-900 shadow-lg ring-1 ring-black dark:ring-darkSurface-100 ring-opacity-5  outline-none       '}>
-        <Menu.Item>
-          {({ active }) => (
-            <button className='flex flex-row-reverse py-1 px-2 w-full justify-between rounded items-center hover:bg-lightSurface-400 dark:hover:bg-darkSurface-800' onClick={() => ChangeTheme("light")}>Claro {SunIcon} </button>
-          )}
-        </Menu.Item>
-        <Menu.Item>
-          {({ active }) => (
-            <button className='flex flex-row-reverse py-1 px-2 w-full justify-between rounded items-center hover:bg-lightSurface-400 dark:hover:bg-darkSurface-800' onClick={() => ChangeTheme('dark')}>Escuro {MoonIcon}</button>
-          )}
-        </Menu.Item>
-        <Menu.Item>
-          {({ active }) => (
-            <button className='flex flex-row-reverse py-1 px-2 w-full justify-between rounded items-center hover:bg-lightSurface-400 dark:hover:bg-darkSurface-800' onClick={() => ChangeTheme('remove')} >Sistema <Desktop weight="fill" /></button>
-          )}
-        </Menu.Item>
-      </Menu.Items>
+        className={theme.includes('system') ? 'text-white' : 'text-violet-400'}>
+        {theme.includes('light') ? SunIcon : MoonIcon}
+      </Menu.Button>
+      <Transition
+        enter="transition duration-100 ease-out"
+        enterFrom="transform scale-95 opacity-0"
+        enterTo="transform scale-100 opacity-100"
+        leave="transition duration-75 ease-out"
+        leaveFrom="transform scale-100 opacity-100"
+        leaveTo="transform scale-95 opacity-0"
+      >
+        <Menu.Items
+          className={`absolute left-5 -top-20 flex flex-col mt-2 w-28 origin-right divide-y divide-gray-100 dark:divide-darkSurface-800  dark:text-darkText-100 rounded-md dark:shadow-md dark:shadow-brand-800 bg-white dark:bg-darkSurface-900 shadow-lg outline-none`}
+        >
+          <Menu.Item>
+            <button
+              title="light"
+              onClick={() => ChangeTheme("light")}
+              className={`${theme.includes('light') && 'text-violet-500'} flex flex-row-reverse py-1 px-2 w-full justify-between rounded items-center hover:bg-lightSurface-400 dark:hover:bg-darkSurface-800`}>
+              Claro {SunIcon}
+            </button>
+          </Menu.Item>
+          <Menu.Item>
+            <button
+              title="dark"
+              className={`${theme.includes('dark') && 'text-violet-500'} flex flex-row-reverse py-1 px-2 w-full justify-between rounded items-center hover:bg-lightSurface-400 dark:hover:bg-darkSurface-800`}
+              onClick={() => ChangeTheme('dark')}>
+              Escuro {MoonIcon}
+            </button>
+          </Menu.Item>
+          <Menu.Item>
+            <button
+              title="system"
+              className={`${theme.includes('system') && 'text-violet-500'} flex flex-row-reverse py-1 px-2 w-full justify-between rounded items-center hover:bg-lightSurface-400 dark:hover:bg-darkSurface-800`}
+              onClick={() => ChangeTheme('system')} >
+              Sistema <Desktop weight="fill" className="mx-2" />
+            </button>
+          </Menu.Item>
+        </Menu.Items>
+      </Transition>
     </Menu >
   )
 }
