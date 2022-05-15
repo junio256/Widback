@@ -16,8 +16,8 @@ export function CallButton() {
 
         {/* Titulo */}
         <div className='z-20 text-[4rem] text-TextDark-900 dark:text-TextLight-100 font-inter leading-[5rem]'>
-          <h1><span className='font-bold '>Um</span> botão.<br />
-            <span className='font-bold'>Zero</span> esforço.</h1>
+          <h1><span id="headerOne" className='font-bold '>Um</span> botão.<br />
+            <span id="headerZero" className='font-bold'>Zero</span> esforço.</h1>
         </div>
 
         {/* Chamada */}

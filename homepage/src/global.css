@@ -2,8 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+#headerOne {
+  -webkit-animation:change-color-one 4s ease-in-out 0s infinite normal;
+  -moz-animation:change-color-one 4s ease-in-out 0s infinite normal;
+  -ms-animation:change-color-one 4s ease-in-out 0s infinite normal;
+  animation:change-color-one 4s ease-in-out 0s infinite normal;
+}
 
 
+#headerZero {
+  -webkit-animation:change-color 4s ease-in-out 0s infinite normal;
+  -moz-animation:change-color 4s ease-in-out 0s infinite normal;
+  -ms-animation:change-color 4s ease-in-out 0s infinite normal;
+  animation:change-color 4s ease-in-out 0s infinite normal;
+}
+
+@-webkit-keyframes change-color-one {
+50%{ color:#ffd676; }
+}
+  
+@keyframes change-color-one {
+50%{ color:#ffd676; }
+}
+
+@-webkit-keyframes change-color {
+0% {color:#9fffc5;}
+50% {color: white}
+100%{ color:#9fffc5; }
+}
+  
+@keyframes change-color {
+  0% {color:#9fffc5;}
+  50% {color: white}
+  100%{ color:#9fffc5; }
+}
 
 strong {
   @apply font-semibold
