@@ -1,3 +1,4 @@
+import { Caller } from "./components/Caller"
 import { Feedget } from "./components/Feedget"
 
 
@@ -8,5 +9,11 @@ if (localStorage.theme === 'dark' || window.matchMedia('(prefers-color-scheme: d
 }
 
 export function App() {
-  return <Feedget />
+
+  return (
+    <>
+      <Caller />
+      <Feedget />
+    </>
+  )
 }
