@@ -4,11 +4,11 @@ import { WidgetScreen } from './components/WidgetScreen'
 import { InputScreen } from './components/InputScreen'
 import { Advantages } from './components/Advantages'
 import { Footer } from './components/Footer'
-import { ThemeSwitcher } from './components/ThemeSwitcher'
+import { Feedget } from '@juniokoi/feedget'
 
 
 
-function App() {
+export default function App() {
   return (
     <div className='bg-zinc-50 dark:bg-BGdark-900'>
       <Header />
@@ -17,10 +17,9 @@ function App() {
       <InputScreen />
       <Advantages />
       <Footer />
-
+      <Feedget />
     </div>
   )
 
 }
 
-export default App
