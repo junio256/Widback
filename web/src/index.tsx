@@ -1,4 +1,4 @@
-import { WidgetButton } from "./components/WidgetButton";
+import { Feedget } from "./components/Feedget";
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
@@ -6,6 +6,6 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
   document.documentElement.classList.remove('dark')
 }
 
-export function Feedget() {
-  return <WidgetButton />
+export {
+  Feedget
 }

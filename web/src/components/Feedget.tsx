@@ -4,10 +4,10 @@ import { WidgetForm } from './WidgetForm'
 
 
 
-export function WidgetButton() {
+export function Feedget() {
 
   return (
-    <Popover className='absolute bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end font-inter'>
+    <Popover className='fixed bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end font-inter'>
       <Popover.Panel>
         <WidgetForm />
       </Popover.Panel>
