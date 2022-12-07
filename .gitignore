@@ -25,6 +25,7 @@ dist-ssr
 *.sw?
 
 **/prisma/*
+**/coverage/
 !**/prisma/schema.prisma
 
 **/.env
