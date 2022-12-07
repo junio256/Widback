@@ -9,3 +9,98 @@
 body {
   @apply bg-darkSurface-700 text-zinc-100;
 }
+
+#headerOne {
+  -webkit-animation:change-color-one 4s ease-in-out 0s infinite normal;
+  -moz-animation:change-color-one 4s ease-in-out 0s infinite normal;
+  -ms-animation:change-color-one 4s ease-in-out 0s infinite normal;
+  animation:change-color-one 4s ease-in-out 0s infinite normal;
+}
+
+
+#headerZero {
+  -webkit-animation:change-color 4s ease-in-out 0s infinite normal;
+  -moz-animation:change-color 4s ease-in-out 0s infinite normal;
+  -ms-animation:change-color 4s ease-in-out 0s infinite normal;
+  animation:change-color 4s ease-in-out 0s infinite normal;
+}
+
+@-webkit-keyframes change-color-one {
+  50%{ color:#ffd676; }
+}
+
+@keyframes change-color-one {
+  50%{ color:#ffd676; }
+}
+
+@-webkit-keyframes change-color {
+  0% {color:#9fffc5;}
+  50% {color: white}
+  100%{ color:#9fffc5; }
+}
+
+@keyframes change-color {
+  0% {color:#9fffc5;}
+  50% {color: white}
+  100%{ color:#9fffc5; }
+}
+
+strong {
+  @apply font-semibold
+}
+
+input {
+  caret-color: black;
+}
+
+#advantagesDiv {
+  margin: 0 auto;
+  padding: 30px;
+  border: 2px solid rgba(130, 87, 230, 0.49);
+
+  box-shadow: -1px 1px 21px -2px rgba(130, 87, 230, 0.49), -1px 1px 21px -2px rgba(130, 87, 230, 0.49) inset;
+  -webkit-box-shadow: -1px 1px 21px -2px rgba(130, 87, 230, 0.49), -1px 1px 21px -2px rgba(130, 87, 230, 0.49) inset;
+  -moz-box-shadow: -1px 1px 21px -2px rgba(130, 87, 230, 0.49), -1px 1px 21px -2px rgba(130, 87, 230, 0.49) inset;
+}
+
+#advantagesDiv button {
+  padding: .5em;
+  margin: 20px;
+  height: 55px;
+  /* width: 282px; */
+  min-width: 290px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+}
+
+#advantagesDiv button {
+  @apply transition delay-100 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-gray-900 text-TextDark-900 bg-slate-300
+}
+
+#advantagesDiv button img {
+  max-width: 50px;
+  color: black;
+}
+
+#footer {
+  border-radius: 8px 8px 0px 0;
+  border-left: 1px solid rgba(130, 87, 230, 0.49);
+  border-top: 1px solid rgba(130, 87, 230, 0.49);
+  border-right: 1px solid rgba(130, 87, 230, 0.49);
+  box-shadow: -1px 1px 21px -2px rgba(130, 87, 230, 0.49), -1px 1px 21px -2px rgba(130, 87, 230, 0.49) inset;
+  -webkit-box-shadow: -1px 1px 21px -2px rgba(130, 87, 230, 0.49), -1px 1px 21px -2px rgba(130, 87, 230, 0.49) inset;
+  -moz-box-shadow: -1px 1px 21px -2px rgba(130, 87, 230, 0.49), -1px 1px 21px -2px rgba(130, 87, 230, 0.49) inset;
+}
+
+@media (max-width: 789px) {
+  #menuScreen {
+    flex-direction: column;
+    width: auto;
+    margin: 2rem;
+    gap: 10rem;
+  }
+
+}

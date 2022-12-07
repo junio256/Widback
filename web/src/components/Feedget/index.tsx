@@ -4,7 +4,7 @@ import { WidgetForm } from './WidgetForm'
 
 
 
-export function Feedget() {
+export function Widback() {
 
   return (
     <Popover className='fixed bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end font-inter'>
