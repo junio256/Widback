@@ -1,5 +1,6 @@
 import { ArrowLeft, Camera } from "phosphor-react";
 import { FormEvent, useState } from "react";
+import axios from 'axios'
 import { FeedbackType, feedbackTypes } from ".."
 import api from "../../../../lib/api";
 import { CloseButton } from "../../CloseButton"
@@ -28,15 +29,14 @@ export function FeedbackContentStep({
     event.preventDefault();
     setIsSendingFeedback(true);
 
-    await api.post('/feedbacks', {
+    await api.post('/feedback', {
       type: feedbackTypeInfo.title,
       comment,
       screenshot,
-    })
+    }).catch(e =>console.log(e.message) ) 
 
     setIsSendingFeedback(false);
     onFeedbackSent();
-
   }
 
   return (
