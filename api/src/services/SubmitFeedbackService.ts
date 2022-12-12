@@ -1,38 +1,33 @@
 import { MailAdapter } from "../adapters/mail-adapter";
-import { FeedbacksRepository } from "../repositories/feedbacks-repository";
+import { FeedbacksRepository } from "../repositories/FeedbacksRepository";
+import handleError from "./../../shared/error"
 
-interface SubmitFeedbackUseCaseRequest {
+interface IFeedback {
   type: string;
   comment: string;
   screenshot?: string;
 }
 
-export class SubmitFeedbackUseCase {
+export class SubmitFeedbackService {
 
   constructor(
     private feedbacksRepository: FeedbacksRepository,
-    private mailAdapter: MailAdapter,
+    private mailAdapter: MailAdapter
   ) { }
 
-  async execute(request: SubmitFeedbackUseCaseRequest) {
+  async execute(request: IFeedback) {
 
     const { type, comment, screenshot } = request;
 
     if (!type) {
-      throw new Error('Type is required')
+        handleError(400, "Type is required")
     }
     if (!comment) {
-      throw new Error('Comment is required')
+        handleError(400, "Comment is required")
     }
     if (screenshot && !screenshot.startsWith('data:image/png;base64')) {
-      throw new Error('Invalid screenshot format.')
+        handleError(400, "Screenshot invalid format")
     }
-
-    await this.feedbacksRepository.create({
-      type,
-      comment,
-      screenshot,
-    })
 
     await this.mailAdapter.sendMail({
       subject: `Novo feedback! Do tipo ${type}`,

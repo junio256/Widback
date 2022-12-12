@@ -11,7 +11,6 @@ const app = express();
 //PUT = Atualizar informações de uma entidade
 //PATCH = Atualizar uma informação única de uma entidade
 //DELETE = deleta rs
-app.use(cors())
 app.use(express.json())
 app.use(routes)
 

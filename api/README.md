@@ -37,7 +37,7 @@ Agora basta digitar `npm run dev` e deve estar tudo certinho.
 
 ### Como configurar nossa API para enviar a screenshot junto. 
 
-1. Primeiro nós precisamos acessar a o arquivo [submit-feedback-use-case.ts](./src/use-cases/submit-feedback-use-case.ts) e 
+1. Primeiro nós precisamos acessar a o arquivo [SubmitFeedbackService.ts](src/services/SubmitFeedbackService.ts) e 
 2. então dentro da função `this.mailAdapter.sendMail(` vemos que apenas está sendo anexado o tipo de erro e o comentário, 
 3. mas antes de simplesmente inserirmos uma nova linha e colocarmos `${screenshot}`, é necessário realizar uma condicional pois lembre-se: **o screenshot é opcional!**. 
 4. logo, inserimos o seguinte: ` screenshot ? `${screenshot}` : ``, `, traduzindo: se possuir screenshot, insira ela aqui, caso contrário, coloque um espaço em branco.

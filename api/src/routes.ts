@@ -1,30 +1,34 @@
 import express from 'express'
 import { NodemailerMailAdapter } from './adapters/nodemailer/nodemailer-mail-adapter';
-import { PrismaFeedbacksRepository } from './repositories/prisma/prisma-feedbacks-repository';
-import { SubmitFeedbackUseCase } from './use-cases/submit-feedback-use-case';
+import prisma from "./prisma";
+import { PrismaFeedbackRepository } from './repositories/prisma/PrismaFeedbackRepository';
+import { SubmitFeedbackService } from './services/SubmitFeedbackService';
 
 export const routes = express.Router()
 
 
 
-routes.post('/feedbacks', async (req, res) => {
+routes.post('/feedback', async (req, res) => {
 
   const { type, comment, screenshot } = req.body;
   const nodemailerMailAdapter = new NodemailerMailAdapter()
 
 
-  const prismaFeedbacksRepository = new PrismaFeedbacksRepository();
-  const submitFeedbackUseCase = new SubmitFeedbackUseCase(
+  const prismaFeedbacksRepository = new PrismaFeedbackRepository();
+  const service = new SubmitFeedbackService(
     prismaFeedbacksRepository,
     nodemailerMailAdapter
   );
 
-  await submitFeedbackUseCase.execute({
-    type,
-    comment,
-    screenshot,
-  });
-
+  const result = await prisma.feedback.create({
+    data: {
+      type: type,
+      comment: comment,
+      screenshot: screenshot,
+    }
+  })
+  res.json(result)
+  await service.execute(req.body)
 
   return res.status(201).send();
 })

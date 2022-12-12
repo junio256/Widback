@@ -10,7 +10,7 @@ datasource db {
 //UUID = Universal Unique ID
 
 model Feedback {
-  id String @id @default(uuid())
+  id         String @id @default(uuid())
 
 
   type       String
