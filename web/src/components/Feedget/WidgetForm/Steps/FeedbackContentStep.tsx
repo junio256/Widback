@@ -29,11 +29,11 @@ export function FeedbackContentStep({
     event.preventDefault();
     setIsSendingFeedback(true);
 
-    await api.post('/feedback', {
+    await api.post('/feedbacks', {
       type: feedbackTypeInfo.title,
-      comment,
-      screenshot,
-    }).catch(e =>console.log(e.message) ) 
+      comment: comment,
+      screenshot: screenshot,
+    })
 
     setIsSendingFeedback(false);
     onFeedbackSent();
