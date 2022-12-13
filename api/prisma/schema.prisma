@@ -9,14 +9,13 @@ datasource db {
 
 //UUID = Universal Unique ID
 
-model Feedback {
-  id         String @id @default(uuid())
-
+model Feedbacks {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
 
   type       String
   comment    String
   screenshot String?
-
 
   @@map("feedbacks")
 }

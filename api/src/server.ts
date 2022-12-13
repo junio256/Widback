@@ -1,7 +1,6 @@
-
 import express from 'express'
-import cors from 'cors'
-import { routes } from './routes';
+import {routes} from './routes';
+import cors from 'cors';
 
 const app = express();
 // GET, POST, PUT, PATCH, DELETE
@@ -11,11 +10,22 @@ const app = express();
 //PUT = Atualizar informações de uma entidade
 //PATCH = Atualizar uma informação única de uma entidade
 //DELETE = deleta rs
+
 app.use(express.json())
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+        'https://widback.vercel.app',
+        'https://widback.juniokoi.dev/']
+}))
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    next();
+})
 app.use(routes)
 
-
-const PORT = 3333
-app.listen(process.env.PORT || PORT, () => {
-  console.log(`HTTP server running at PORT: ${process.env.PORT || PORT}`);
+const PORT: string = process.env.PORT || "3333"
+app.listen(PORT, () => {
+    console.log(`HTTP server running at PORT: ${PORT}`);
 })
