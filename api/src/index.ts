@@ -16,7 +16,7 @@ app.use(cors({
     origin: [
         'http://localhost:3000',
         'https://widback.vercel.app',
-        'https://widback.juniokoi.dev/']
+        'https://widback.juniokoi.dev']
 }))
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");

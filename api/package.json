@@ -24,9 +24,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "npx prisma generate && ts-node src/server.ts",
+    "dev": "npx prisma generate && ts-node src/index.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node ./dist/src/index.js"
   },
   "keywords": [],
   "author": "",
