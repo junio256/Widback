@@ -7,8 +7,8 @@ This project was developed aimed to facilitate the collection of feedback from u
 
 
 ## Index: 🔗
-* [Preview](#Preview)
-* [Installation](#Installation)
+* [Preview](#preview)
+* [Installation](#installation)
 
 ### Preview
 Go to the website and see with your own eyes
