@@ -13,6 +13,7 @@ const app = express();
 
 app.use(express.json())
 app.use(cors({
+   crossorigin: "anonymous",
     origin: [
         'http://localhost:3000',
         'https://widback.vercel.app',
