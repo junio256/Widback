@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const app = express();
 const origins: string[] = JSON.parse(process.env.ORIGINS!)
-const ORIGINS = [
+const ORIGINS: string[] = [
     'http://localhost:3000',
     ...origins
 ]
@@ -18,15 +18,8 @@ const ORIGINS = [
 
 app.use(express.json())
 app.use(cors({
-    origin: ORIGINS
+    origin: ORIGINS,
 }))
-app.use((req, res, next) => {
-    res.set({
-        "Access-Control-Allow-Origin": ORIGINS,
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE"
-    });
-    next();
-})
 app.use(routes)
 
 const PORT: string = process.env.PORT || "3333"
