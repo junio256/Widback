@@ -1,12 +1,12 @@
 import express from 'express'
 import {routes} from './routes';
 import cors from 'cors';
-const env = require('dotenv').config();
 
 const app = express();
+const origins: string[] = JSON.parse(process.env.ORIGINS!)
 const ORIGINS = [
     'http://localhost:3000',
-    env.ORIGINS
+    ...origins
 ]
 // GET, POST, PUT, PATCH, DELETE
 
@@ -21,8 +21,10 @@ app.use(cors({
     origin: ORIGINS
 }))
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", ORIGINS);
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.set({
+        "Access-Control-Allow-Origin": ORIGINS,
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE"
+    });
     next();
 })
 app.use(routes)
