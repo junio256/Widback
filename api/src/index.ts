@@ -17,8 +17,9 @@ const ORIGINS: string[] = [
 //DELETE = deleta rs
 
 app.use(express.json())
+console.log(ORIGINS.map(e => e.replace(";","")),)
 app.use(cors({
-    origin: ORIGINS,
+    origin: ORIGINS.map(e => e.replace(";","")),
 }))
 app.use(routes)
 
