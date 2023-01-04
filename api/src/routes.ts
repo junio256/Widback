@@ -24,7 +24,8 @@ routes.post('/feedbacks', async (req, res) => {
       comment: comment,
       screenshot: screenshot,
     }
-  })
+  }).catch(err => console.log(err))
+
   res.json(feedback)
   await service.execute(req.body)
 

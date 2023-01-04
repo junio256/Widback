@@ -8,16 +8,8 @@ const ORIGINS: string[] = [
     'http://localhost:3000',
     ...origins
 ]
-// GET, POST, PUT, PATCH, DELETE
-
-//GET = Buscar informações
-//POST = Cadastrar informações
-//PUT = Atualizar informações de uma entidade
-//PATCH = Atualizar uma informação única de uma entidade
-//DELETE = deleta rs
 
 app.use(express.json())
-console.log(ORIGINS.map(e => e.replace(";","")),)
 app.use(cors({
     origin: ORIGINS.map(e => e.replace(";","")),
 }))
